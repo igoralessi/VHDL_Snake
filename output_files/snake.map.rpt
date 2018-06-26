@@ -1,0 +1,727 @@
+Analysis & Synthesis report for snake
+Tue Jun 26 18:25:33 2018
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for User Entity Instance: Top-level Entity: |snake
+ 15. Parameter Settings for User Entity Instance: player:player1
+ 16. Parameter Settings for User Entity Instance: player:player2
+ 17. Port Connectivity Checks: "DisplayVGA:vga|sync_mod:vga_sync"
+ 18. Elapsed Time Per Partition
+ 19. Analysis & Synthesis Equations
+ 20. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Jun 26 18:25:33 2018           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; snake                                           ;
+; Top-level Entity Name              ; snake                                           ;
+; Family                             ; Cyclone III                                     ;
+; Total logic elements               ; 1,929                                           ;
+;     Total combinational functions  ; 1,771                                           ;
+;     Dedicated logic registers      ; 382                                             ;
+; Total registers                    ; 382                                             ;
+; Total pins                         ; 22                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP3C16F484C6       ;                    ;
+; Top-level entity name                                                      ; snake              ; snake              ;
+; Family name                                                                ; Cyclone III        ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                    ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                             ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------+---------+
+; debouncePulse.vhd                ; yes             ; User VHDL File  ; C:/Users/Sayuri/Desktop/aps_logica/VHDL_Snake-MovimentosSnake2_v3/debouncePulse.vhd      ;         ;
+; snake.vhd                        ; yes             ; User VHDL File  ; C:/Users/Sayuri/Desktop/aps_logica/VHDL_Snake-MovimentosSnake2_v3/snake.vhd              ;         ;
+; GenericDefinitions.vhd           ; yes             ; User VHDL File  ; C:/Users/Sayuri/Desktop/aps_logica/VHDL_Snake-MovimentosSnake2_v3/GenericDefinitions.vhd ;         ;
+; DisplayVGA.vhd                   ; yes             ; User VHDL File  ; C:/Users/Sayuri/Desktop/aps_logica/VHDL_Snake-MovimentosSnake2_v3/DisplayVGA.vhd         ;         ;
+; sync_mod.vhd                     ; yes             ; User VHDL File  ; C:/Users/Sayuri/Desktop/aps_logica/VHDL_Snake-MovimentosSnake2_v3/sync_mod.vhd           ;         ;
+; player.vhd                       ; yes             ; User VHDL File  ; C:/Users/Sayuri/Desktop/aps_logica/VHDL_Snake-MovimentosSnake2_v3/player.vhd             ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 1,929     ;
+;                                             ;           ;
+; Total combinational functions               ; 1771      ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 338       ;
+;     -- 3 input functions                    ; 807       ;
+;     -- <=2 input functions                  ; 626       ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 668       ;
+;     -- arithmetic mode                      ; 1103      ;
+;                                             ;           ;
+; Total registers                             ; 382       ;
+;     -- Dedicated logic registers            ; 382       ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 22        ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 183       ;
+; Total fan-out                               ; 5891      ;
+; Average fan-out                             ; 2.68      ;
++---------------------------------------------+-----------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                    ;
++-----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------+--------------+
+; Compilation Hierarchy Node        ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                     ; Library Name ;
++-----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------+--------------+
+; |snake                            ; 1771 (288)        ; 382 (74)     ; 0           ; 0            ; 0       ; 0         ; 22   ; 0            ; |snake                                  ; work         ;
+;    |DisplayVGA:vga|               ; 1230 (1158)       ; 43 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |snake|DisplayVGA:vga                   ; work         ;
+;       |sync_mod:vga_sync|         ; 72 (72)           ; 43 (43)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |snake|DisplayVGA:vga|sync_mod:vga_sync ; work         ;
+;    |debouncePulse:debounce_pulse| ; 46 (46)           ; 36 (36)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |snake|debouncePulse:debounce_pulse     ; work         ;
+;    |player:player1|               ; 124 (124)         ; 181 (181)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |snake|player:player1                   ; work         ;
+;    |player:player2|               ; 83 (83)           ; 48 (48)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |snake|player:player2                   ; work         ;
++-----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; DisplayVGA:vga|red[0]                               ; GND                 ; yes                    ;
+; DisplayVGA:vga|red[1]                               ; GND                 ; yes                    ;
+; DisplayVGA:vga|red[2]                               ; GND                 ; yes                    ;
+; DisplayVGA:vga|red[3]                               ; GND                 ; yes                    ;
+; DisplayVGA:vga|green[0]                             ; GND                 ; yes                    ;
+; DisplayVGA:vga|green[1]                             ; GND                 ; yes                    ;
+; DisplayVGA:vga|green[2]                             ; GND                 ; yes                    ;
+; DisplayVGA:vga|green[3]                             ; GND                 ; yes                    ;
+; DisplayVGA:vga|blue[0]                              ; GND                 ; yes                    ;
+; DisplayVGA:vga|blue[1]                              ; GND                 ; yes                    ;
+; DisplayVGA:vga|blue[2]                              ; GND                 ; yes                    ;
+; DisplayVGA:vga|blue[3]                              ; GND                 ; yes                    ;
+; Number of user-specified and inferred latches = 12  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++---------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                    ;
++-----------------------------------------+---------------------------------------------+
+; Register name                           ; Reason for Removal                          ;
++-----------------------------------------+---------------------------------------------+
+; testesf[1..9,11..30]                    ; Merged with testesf[10]                     ;
+; player:player2|\count:temp[0]           ; Merged with player:player1|\count:temp[0]   ;
+; player:player2|\count:temp[1]           ; Merged with player:player1|\count:temp[1]   ;
+; player:player2|\count:temp[2]           ; Merged with player:player1|\count:temp[2]   ;
+; player:player2|\count:temp[3]           ; Merged with player:player1|\count:temp[3]   ;
+; player:player2|\count:temp[4]           ; Merged with player:player1|\count:temp[4]   ;
+; player:player2|\count:temp[5]           ; Merged with player:player1|\count:temp[5]   ;
+; player:player2|\count:temp[6]           ; Merged with player:player1|\count:temp[6]   ;
+; player:player2|\count:temp[7]           ; Merged with player:player1|\count:temp[7]   ;
+; player:player2|\count:temp[8]           ; Merged with player:player1|\count:temp[8]   ;
+; player:player2|\count:temp[9]           ; Merged with player:player1|\count:temp[9]   ;
+; player:player2|\count:temp[10]          ; Merged with player:player1|\count:temp[10]  ;
+; player:player2|\count:temp[11]          ; Merged with player:player1|\count:temp[11]  ;
+; player:player2|\count:temp[12]          ; Merged with player:player1|\count:temp[12]  ;
+; player:player2|\count:temp[13]          ; Merged with player:player1|\count:temp[13]  ;
+; player:player2|\count:temp[14]          ; Merged with player:player1|\count:temp[14]  ;
+; player:player2|\count:temp[15]          ; Merged with player:player1|\count:temp[15]  ;
+; player:player2|\count:temp[16]          ; Merged with player:player1|\count:temp[16]  ;
+; player:player2|\count:temp[17]          ; Merged with player:player1|\count:temp[17]  ;
+; player:player2|\count:temp[18]          ; Merged with player:player1|\count:temp[18]  ;
+; player:player2|\count:temp[19]          ; Merged with player:player1|\count:temp[19]  ;
+; player:player2|\count:temp[20]          ; Merged with player:player1|\count:temp[20]  ;
+; player:player2|\count:temp[21]          ; Merged with player:player1|\count:temp[21]  ;
+; player:player2|\count:temp[22]          ; Merged with player:player1|\count:temp[22]  ;
+; player:player2|\count:temp[23]          ; Merged with player:player1|\count:temp[23]  ;
+; testesf[10]                             ; Stuck at GND due to stuck port data_in      ;
+; player:player2|my_size[0,1]             ; Stuck at VCC due to stuck port clock_enable ;
+; player:player2|my_size[2,3]             ; Stuck at GND due to stuck port clock_enable ;
+; player:player2|x_snake_buffer[9][6]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[8][6]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[7][6]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[6][6]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[5][6]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[4][6]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[3][6]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[9][5]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[8][5]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[7][5]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[6][5]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[5][5]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[4][5]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[3][5]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[9][4]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[8][4]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[7][4]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[6][4]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[5][4]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[4][4]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[3][4]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[9][3]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[8][3]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[7][3]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[6][3]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[5][3]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[4][3]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[3][3]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[9][2]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[8][2]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[7][2]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[6][2]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[5][2]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[4][2]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[3][2]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[9][7]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[8][7]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[7][7]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[6][7]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[5][7]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[4][7]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[3][7]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[9][1]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[8][1]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[7][1]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[6][1]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[5][1]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[4][1]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[3][1]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[9][0]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[8][0]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[7][0]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[6][0]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[5][0]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[4][0]     ; Lost fanout                                 ;
+; player:player2|x_snake_buffer[3][0]     ; Lost fanout                                 ;
+; player:player2|y_snake_buffer[9][5]     ; Lost fanout                                 ;
+; player:player2|y_snake_buffer[8][5]     ; Lost fanout                                 ;
+; player:player2|y_snake_buffer[7][5]     ; Lost fanout                                 ;
+; player:player2|y_snake_buffer[6][5]     ; Lost fanout                                 ;
+; player:player2|y_snake_buffer[5][5]     ; Lost fanout                                 ;
+; player:player2|y_snake_buffer[4][5]     ; Lost fanout                                 ;
+; player:player2|y_snake_buffer[3][5]     ; Lost fanout                                 ;
+; player:player2|y_snake_buffer[9][4]     ; Lost fanout                                 ;
+; player:player2|y_snake_buffer[8][4]     ; Lost fanout                                 ;
+; player:player2|y_snake_buffer[7][4]     ; Lost fanout                                 ;
+; player:player2|y_snake_buffer[6][4]     ; Lost fanout                                 ;
+; player:player2|y_snake_buffer[5][4]     ; Lost fanout                                 ;
+; player:player2|y_snake_buffer[4][4]     ; Lost fanout                                 ;
+; player:player2|y_snake_buffer[3][4]     ; Lost fanout                                 ;
+; player:player2|y_snake_buffer[9][3]     ; Lost fanout                                 ;
+; player:player2|y_snake_buffer[8][3]     ; Lost fanout                                 ;
+; player:player2|y_snake_buffer[7][3]     ; Lost fanout                                 ;
+; player:player2|y_snake_buffer[6][3]     ; Lost fanout                                 ;
+; player:player2|y_snake_buffer[5][3]     ; Lost fanout                                 ;
+; player:player2|y_snake_buffer[4][3]     ; Lost fanout                                 ;
+; player:player2|y_snake_buffer[3][3]     ; Lost fanout                                 ;
+; player:player2|y_snake_buffer[9][2]     ; Lost fanout                                 ;
+; player:player2|y_snake_buffer[8][2]     ; Lost fanout                                 ;
+; player:player2|y_snake_buffer[7][2]     ; Lost fanout                                 ;
+; player:player2|y_snake_buffer[6][2]     ; Lost fanout                                 ;
+; player:player2|y_snake_buffer[5][2]     ; Lost fanout                                 ;
+; player:player2|y_snake_buffer[4][2]     ; Lost fanout                                 ;
+; player:player2|y_snake_buffer[3][2]     ; Lost fanout                                 ;
+; player:player2|y_snake_buffer[9][6]     ; Lost fanout                                 ;
+; player:player2|y_snake_buffer[8][6]     ; Lost fanout                                 ;
+; player:player2|y_snake_buffer[7][6]     ; Lost fanout                                 ;
+; player:player2|y_snake_buffer[6][6]     ; Lost fanout                                 ;
+; player:player2|y_snake_buffer[5][6]     ; Lost fanout                                 ;
+; player:player2|y_snake_buffer[4][6]     ; Lost fanout                                 ;
+; player:player2|y_snake_buffer[3][6]     ; Lost fanout                                 ;
+; player:player2|y_snake_buffer[9][1]     ; Lost fanout                                 ;
+; player:player2|y_snake_buffer[8][1]     ; Lost fanout                                 ;
+; player:player2|y_snake_buffer[7][1]     ; Lost fanout                                 ;
+; player:player2|y_snake_buffer[6][1]     ; Lost fanout                                 ;
+; player:player2|y_snake_buffer[5][1]     ; Lost fanout                                 ;
+; player:player2|y_snake_buffer[4][1]     ; Lost fanout                                 ;
+; player:player2|y_snake_buffer[3][1]     ; Lost fanout                                 ;
+; player:player2|y_snake_buffer[9][0]     ; Lost fanout                                 ;
+; player:player2|y_snake_buffer[8][0]     ; Lost fanout                                 ;
+; player:player2|y_snake_buffer[7][0]     ; Lost fanout                                 ;
+; player:player2|y_snake_buffer[6][0]     ; Lost fanout                                 ;
+; player:player2|y_snake_buffer[5][0]     ; Lost fanout                                 ;
+; player:player2|y_snake_buffer[4][0]     ; Lost fanout                                 ;
+; player:player2|y_snake_buffer[3][0]     ; Lost fanout                                 ;
+; counteraleatorio1[27..30]               ; Stuck at GND due to stuck port data_in      ;
+; counteraleatorio2[27..30]               ; Stuck at GND due to stuck port data_in      ;
+; counter[29,30]                          ; Stuck at GND due to stuck port data_in      ;
+; counteraleatorio1[24..26]               ; Stuck at GND due to stuck port data_in      ;
+; counteraleatorio2[24..26]               ; Stuck at GND due to stuck port data_in      ;
+; counteraleatorio1[6..23]                ; Stuck at GND due to stuck port data_in      ;
+; counteraleatorio2[6..23]                ; Stuck at GND due to stuck port data_in      ;
+; Total Number of Removed Registers = 215 ;                                             ;
++-----------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                    ;
++-------------------------------------+--------------------------------+-----------------------------------------------------------------------------------------+
+; Register name                       ; Reason for Removal             ; Registers Removed due to This Register                                                  ;
++-------------------------------------+--------------------------------+-----------------------------------------------------------------------------------------+
+; counteraleatorio1[30]               ; Stuck at GND                   ; counteraleatorio1[26], counteraleatorio1[25], counteraleatorio1[24],                    ;
+;                                     ; due to stuck port data_in      ; counteraleatorio1[6], counteraleatorio1[7], counteraleatorio1[8], counteraleatorio1[9], ;
+;                                     ;                                ; counteraleatorio1[10], counteraleatorio1[11], counteraleatorio1[12],                    ;
+;                                     ;                                ; counteraleatorio1[13], counteraleatorio1[14], counteraleatorio1[15],                    ;
+;                                     ;                                ; counteraleatorio1[16], counteraleatorio1[17], counteraleatorio1[18],                    ;
+;                                     ;                                ; counteraleatorio1[19], counteraleatorio1[20], counteraleatorio1[21],                    ;
+;                                     ;                                ; counteraleatorio1[22], counteraleatorio1[23]                                            ;
+; counteraleatorio2[30]               ; Stuck at GND                   ; counteraleatorio2[26], counteraleatorio2[25], counteraleatorio2[24],                    ;
+;                                     ; due to stuck port data_in      ; counteraleatorio2[6], counteraleatorio2[7], counteraleatorio2[8], counteraleatorio2[9], ;
+;                                     ;                                ; counteraleatorio2[10], counteraleatorio2[11], counteraleatorio2[12],                    ;
+;                                     ;                                ; counteraleatorio2[13], counteraleatorio2[14], counteraleatorio2[15],                    ;
+;                                     ;                                ; counteraleatorio2[16], counteraleatorio2[17], counteraleatorio2[18],                    ;
+;                                     ;                                ; counteraleatorio2[19], counteraleatorio2[20], counteraleatorio2[21],                    ;
+;                                     ;                                ; counteraleatorio2[22], counteraleatorio2[23]                                            ;
+; player:player2|my_size[3]           ; Stuck at GND                   ; player:player2|x_snake_buffer[5][7], player:player2|x_snake_buffer[6][0],               ;
+;                                     ; due to stuck port clock_enable ; player:player2|x_snake_buffer[5][0], player:player2|x_snake_buffer[4][0],               ;
+;                                     ;                                ; player:player2|x_snake_buffer[3][0], player:player2|y_snake_buffer[8][6],               ;
+;                                     ;                                ; player:player2|y_snake_buffer[7][6], player:player2|y_snake_buffer[6][6],               ;
+;                                     ;                                ; player:player2|y_snake_buffer[5][6], player:player2|y_snake_buffer[4][6],               ;
+;                                     ;                                ; player:player2|y_snake_buffer[3][6]                                                     ;
+; player:player2|x_snake_buffer[9][6] ; Lost Fanouts                   ; player:player2|x_snake_buffer[8][6], player:player2|x_snake_buffer[7][6],               ;
+;                                     ;                                ; player:player2|x_snake_buffer[6][6], player:player2|x_snake_buffer[5][6],               ;
+;                                     ;                                ; player:player2|x_snake_buffer[4][6], player:player2|x_snake_buffer[3][6]                ;
+; player:player2|x_snake_buffer[9][5] ; Lost Fanouts                   ; player:player2|x_snake_buffer[8][5], player:player2|x_snake_buffer[7][5],               ;
+;                                     ;                                ; player:player2|x_snake_buffer[6][5], player:player2|x_snake_buffer[5][5],               ;
+;                                     ;                                ; player:player2|x_snake_buffer[4][5], player:player2|x_snake_buffer[3][5]                ;
+; player:player2|x_snake_buffer[9][4] ; Lost Fanouts                   ; player:player2|x_snake_buffer[8][4], player:player2|x_snake_buffer[7][4],               ;
+;                                     ;                                ; player:player2|x_snake_buffer[6][4], player:player2|x_snake_buffer[5][4],               ;
+;                                     ;                                ; player:player2|x_snake_buffer[4][4], player:player2|x_snake_buffer[3][4]                ;
+; player:player2|x_snake_buffer[9][3] ; Lost Fanouts                   ; player:player2|x_snake_buffer[8][3], player:player2|x_snake_buffer[7][3],               ;
+;                                     ;                                ; player:player2|x_snake_buffer[6][3], player:player2|x_snake_buffer[5][3],               ;
+;                                     ;                                ; player:player2|x_snake_buffer[4][3], player:player2|x_snake_buffer[3][3]                ;
+; player:player2|x_snake_buffer[9][2] ; Lost Fanouts                   ; player:player2|x_snake_buffer[8][2], player:player2|x_snake_buffer[7][2],               ;
+;                                     ;                                ; player:player2|x_snake_buffer[6][2], player:player2|x_snake_buffer[5][2],               ;
+;                                     ;                                ; player:player2|x_snake_buffer[4][2], player:player2|x_snake_buffer[3][2]                ;
+; player:player2|x_snake_buffer[9][1] ; Lost Fanouts                   ; player:player2|x_snake_buffer[8][1], player:player2|x_snake_buffer[7][1],               ;
+;                                     ;                                ; player:player2|x_snake_buffer[6][1], player:player2|x_snake_buffer[5][1],               ;
+;                                     ;                                ; player:player2|x_snake_buffer[4][1], player:player2|x_snake_buffer[3][1]                ;
+; player:player2|y_snake_buffer[9][5] ; Lost Fanouts                   ; player:player2|y_snake_buffer[8][5], player:player2|y_snake_buffer[7][5],               ;
+;                                     ;                                ; player:player2|y_snake_buffer[6][5], player:player2|y_snake_buffer[5][5],               ;
+;                                     ;                                ; player:player2|y_snake_buffer[4][5], player:player2|y_snake_buffer[3][5]                ;
+; player:player2|y_snake_buffer[9][4] ; Lost Fanouts                   ; player:player2|y_snake_buffer[8][4], player:player2|y_snake_buffer[7][4],               ;
+;                                     ;                                ; player:player2|y_snake_buffer[6][4], player:player2|y_snake_buffer[5][4],               ;
+;                                     ;                                ; player:player2|y_snake_buffer[4][4], player:player2|y_snake_buffer[3][4]                ;
+; player:player2|y_snake_buffer[9][3] ; Lost Fanouts                   ; player:player2|y_snake_buffer[8][3], player:player2|y_snake_buffer[7][3],               ;
+;                                     ;                                ; player:player2|y_snake_buffer[6][3], player:player2|y_snake_buffer[5][3],               ;
+;                                     ;                                ; player:player2|y_snake_buffer[4][3], player:player2|y_snake_buffer[3][3]                ;
+; player:player2|y_snake_buffer[9][2] ; Lost Fanouts                   ; player:player2|y_snake_buffer[8][2], player:player2|y_snake_buffer[7][2],               ;
+;                                     ;                                ; player:player2|y_snake_buffer[6][2], player:player2|y_snake_buffer[5][2],               ;
+;                                     ;                                ; player:player2|y_snake_buffer[4][2], player:player2|y_snake_buffer[3][2]                ;
+; player:player2|y_snake_buffer[9][1] ; Lost Fanouts                   ; player:player2|y_snake_buffer[8][1], player:player2|y_snake_buffer[7][1],               ;
+;                                     ;                                ; player:player2|y_snake_buffer[6][1], player:player2|y_snake_buffer[5][1],               ;
+;                                     ;                                ; player:player2|y_snake_buffer[4][1], player:player2|y_snake_buffer[3][1]                ;
+; player:player2|y_snake_buffer[9][0] ; Lost Fanouts                   ; player:player2|y_snake_buffer[8][0], player:player2|y_snake_buffer[7][0],               ;
+;                                     ;                                ; player:player2|y_snake_buffer[6][0], player:player2|y_snake_buffer[5][0],               ;
+;                                     ;                                ; player:player2|y_snake_buffer[4][0], player:player2|y_snake_buffer[3][0]                ;
+; player:player2|my_size[2]           ; Stuck at GND                   ; player:player2|x_snake_buffer[8][7], player:player2|x_snake_buffer[7][7],               ;
+;                                     ; due to stuck port clock_enable ; player:player2|x_snake_buffer[6][7], player:player2|x_snake_buffer[4][7],               ;
+;                                     ;                                ; player:player2|x_snake_buffer[3][7]                                                     ;
+; testesf[10]                         ; Stuck at GND                   ; counter[30], counter[29]                                                                ;
+;                                     ; due to stuck port data_in      ;                                                                                         ;
+; player:player2|x_snake_buffer[9][0] ; Lost Fanouts                   ; player:player2|x_snake_buffer[8][0], player:player2|x_snake_buffer[7][0]                ;
++-------------------------------------+--------------------------------+-----------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 382   ;
+; Number of registers using Synchronous Clear  ; 52    ;
+; Number of registers using Synchronous Load   ; 1     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 136   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; x_food[5]                               ; 10      ;
+; y_food[3]                               ; 10      ;
+; y_food[4]                               ; 9       ;
+; y_special_food[2]                       ; 8       ;
+; y_special_food[3]                       ; 10      ;
+; y_special_food[1]                       ; 6       ;
+; y_special_food[4]                       ; 9       ;
+; x_special_food[2]                       ; 8       ;
+; x_special_food[3]                       ; 10      ;
+; x_special_food[1]                       ; 6       ;
+; x_special_food[4]                       ; 9       ;
+; player:player2|y_snake_buffer[1][3]     ; 4       ;
+; player:player2|y_snake_buffer[1][1]     ; 5       ;
+; player:player2|y_snake_buffer[1][0]     ; 5       ;
+; player:player2|x_snake_buffer[1][3]     ; 4       ;
+; player:player2|x_snake_buffer[1][2]     ; 4       ;
+; player:player2|x_snake_buffer[1][1]     ; 5       ;
+; player:player2|x_snake_buffer[1][0]     ; 5       ;
+; player:player2|y_snake_buffer[0][3]     ; 17      ;
+; player:player2|y_snake_buffer[0][1]     ; 18      ;
+; player:player2|x_snake_buffer[0][3]     ; 18      ;
+; player:player2|x_snake_buffer[0][2]     ; 18      ;
+; player:player2|x_snake_buffer[0][1]     ; 19      ;
+; player:player2|x_snake_buffer[0][0]     ; 19      ;
+; player:player2|y_snake_buffer[2][3]     ; 3       ;
+; player:player2|y_snake_buffer[2][1]     ; 4       ;
+; player:player2|y_snake_buffer[2][0]     ; 4       ;
+; player:player2|x_snake_buffer[2][4]     ; 3       ;
+; player:player1|my_size[0]               ; 9       ;
+; player:player1|my_size[1]               ; 11      ;
+; player:player1|y_snake_buffer[8][5]     ; 4       ;
+; player:player1|y_snake_buffer[8][3]     ; 4       ;
+; player:player1|y_snake_buffer[8][1]     ; 5       ;
+; player:player1|x_snake_buffer[8][3]     ; 4       ;
+; player:player1|x_snake_buffer[8][0]     ; 5       ;
+; player:player1|y_snake_buffer[0][5]     ; 12      ;
+; player:player1|y_snake_buffer[0][1]     ; 11      ;
+; player:player1|x_snake_buffer[0][3]     ; 11      ;
+; player:player1|x_snake_buffer[0][0]     ; 12      ;
+; player:player1|y_snake_buffer[1][5]     ; 4       ;
+; player:player1|y_snake_buffer[1][1]     ; 5       ;
+; player:player1|y_snake_buffer[1][0]     ; 5       ;
+; player:player1|x_snake_buffer[1][3]     ; 4       ;
+; player:player1|x_snake_buffer[1][0]     ; 5       ;
+; player:player1|y_snake_buffer[2][5]     ; 4       ;
+; player:player1|y_snake_buffer[2][2]     ; 4       ;
+; player:player1|x_snake_buffer[2][3]     ; 4       ;
+; player:player1|x_snake_buffer[2][0]     ; 5       ;
+; player:player1|x_snake_buffer[3][3]     ; 4       ;
+; player:player1|x_snake_buffer[3][0]     ; 5       ;
+; player:player1|y_snake_buffer[3][5]     ; 4       ;
+; player:player1|y_snake_buffer[3][2]     ; 4       ;
+; player:player1|y_snake_buffer[3][0]     ; 5       ;
+; player:player1|y_snake_buffer[4][5]     ; 4       ;
+; player:player1|y_snake_buffer[4][2]     ; 4       ;
+; player:player1|y_snake_buffer[4][1]     ; 5       ;
+; player:player1|x_snake_buffer[4][3]     ; 4       ;
+; player:player1|x_snake_buffer[4][0]     ; 5       ;
+; player:player1|y_snake_buffer[5][5]     ; 4       ;
+; player:player1|y_snake_buffer[5][2]     ; 4       ;
+; player:player1|y_snake_buffer[5][1]     ; 5       ;
+; player:player1|y_snake_buffer[5][0]     ; 5       ;
+; player:player1|x_snake_buffer[5][3]     ; 4       ;
+; player:player1|x_snake_buffer[5][0]     ; 5       ;
+; player:player1|y_snake_buffer[6][5]     ; 4       ;
+; player:player1|y_snake_buffer[6][3]     ; 4       ;
+; player:player1|x_snake_buffer[6][3]     ; 4       ;
+; player:player1|x_snake_buffer[6][0]     ; 5       ;
+; player:player1|x_snake_buffer[7][3]     ; 4       ;
+; player:player1|x_snake_buffer[7][0]     ; 5       ;
+; player:player1|y_snake_buffer[7][5]     ; 4       ;
+; player:player1|y_snake_buffer[7][3]     ; 4       ;
+; player:player1|y_snake_buffer[7][0]     ; 5       ;
+; player:player1|y_snake_buffer[9][5]     ; 3       ;
+; player:player1|y_snake_buffer[9][3]     ; 3       ;
+; player:player1|y_snake_buffer[9][1]     ; 4       ;
+; player:player1|y_snake_buffer[9][0]     ; 4       ;
+; player:player1|x_snake_buffer[9][3]     ; 3       ;
+; player:player1|x_snake_buffer[9][0]     ; 4       ;
+; Total number of inverted registers = 79 ;         ;
++-----------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |snake|debouncePulse:debounce_pulse|counter_out[31]  ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |snake|DisplayVGA:vga|sync_mod:vga_sync|x_counter[6] ;
+; 6:1                ; 5 bits    ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |snake|player:player1|y_snake_buffer[0][2]           ;
+; 6:1                ; 5 bits    ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |snake|player:player2|y_snake_buffer[0][6]           ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |snake|player:player1|x_snake_buffer[0][7]           ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |snake|player:player2|x_snake_buffer[0][5]           ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |snake|player:player1|y_snake_buffer[0][1]           ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |snake|player:player2|y_snake_buffer[0][3]           ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |snake|player:player1|x_snake_buffer[0][3]           ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |snake|player:player2|x_snake_buffer[0][3]           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |snake ;
++----------------+----------+-------------------------------------------+
+; Parameter Name ; Value    ; Type                                      ;
++----------------+----------+-------------------------------------------+
+; animation_time ; 10000000 ; Signed Integer                            ;
+; FCLK           ; 50000000 ; Signed Integer                            ;
++----------------+----------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: player:player1                                      ;
++----------------+----------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                          ; Type           ;
++----------------+----------------------------------------------------------------+----------------+
+; animation_time ; 10000000                                                       ; Signed Integer ;
+; init_pos_x     ; A(D"9",D"9",D"9",D"9",D"9",D"9",D"9",D"9",D"9",D"9")           ; Array/Record   ;
+; init_pos_y     ; A(D"43",D"42",D"41",D"40",D"39",D"38",D"37",D"36",D"35",D"34") ; Array/Record   ;
++----------------+----------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: player:player2                               ;
++----------------+---------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                   ; Type           ;
++----------------+---------------------------------------------------------+----------------+
+; animation_time ; 10000000                                                ; Signed Integer ;
+; init_pos_x     ; A(D"0",D"0",D"0",D"0",D"0",D"0",D"0",D"16",D"15",D"15") ; Array/Record   ;
+; init_pos_y     ; A(D"0",D"0",D"0",D"0",D"0",D"0",D"0",D"11",D"11",D"10") ; Array/Record   ;
++----------------+---------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------+
+; Port Connectivity Checks: "DisplayVGA:vga|sync_mod:vga_sync" ;
++-------+-------+----------+-----------------------------------+
+; Port  ; Type  ; Severity ; Details                           ;
++-------+-------+----------+-----------------------------------+
+; reset ; Input ; Info     ; Stuck at GND                      ;
+; start ; Input ; Info     ; Stuck at VCC                      ;
++-------+-------+----------+-----------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:03     ;
++----------------+--------------+
+
+
++--------------------------------+
+; Analysis & Synthesis Equations ;
++--------------------------------+
+The equations can be found in C:/Users/Sayuri/Desktop/aps_logica/VHDL_Snake-MovimentosSnake2_v3/output_files/snake.map.eqn.
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Tue Jun 26 18:25:28 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off snake -c snake
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file debouncepulse.vhd
+    Info (12022): Found design unit 1: debouncePulse-arch
+    Info (12023): Found entity 1: debouncePulse
+Info (12021): Found 2 design units, including 1 entities, in source file snake.vhd
+    Info (12022): Found design unit 1: snake-snake
+    Info (12023): Found entity 1: snake
+Info (12021): Found 1 design units, including 0 entities, in source file genericdefinitions.vhd
+    Info (12022): Found design unit 1: GenericDefinitions
+Info (12021): Found 2 design units, including 1 entities, in source file displayvga.vhd
+    Info (12022): Found design unit 1: DisplayVGA-DisplayVGA
+    Info (12023): Found entity 1: DisplayVGA
+Info (12021): Found 2 design units, including 1 entities, in source file sync_mod.vhd
+    Info (12022): Found design unit 1: sync_mod-Behavioral
+    Info (12023): Found entity 1: sync_mod
+Info (12021): Found 2 design units, including 1 entities, in source file player.vhd
+    Info (12022): Found design unit 1: player-a_player
+    Info (12023): Found entity 1: player
+Info (12127): Elaborating entity "snake" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at snake.vhd(41): used implicit default value for signal "increase_size_p2" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10036): Verilog HDL or VHDL warning at snake.vhd(44): object "win_p2" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at snake.vhd(44): object "win_p1" assigned a value but never read
+Info (12128): Elaborating entity "player" for hierarchy "player:player1"
+Info (12128): Elaborating entity "player" for hierarchy "player:player2"
+Info (12128): Elaborating entity "debouncePulse" for hierarchy "debouncePulse:debounce_pulse"
+Info (12128): Elaborating entity "DisplayVGA" for hierarchy "DisplayVGA:vga"
+Warning (10492): VHDL Process Statement warning at DisplayVGA.vhd(52): signal "x_control" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at DisplayVGA.vhd(53): signal "y_control" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at DisplayVGA.vhd(58): signal "x_snake_p1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at DisplayVGA.vhd(59): signal "y_snake_p1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at DisplayVGA.vhd(59): signal "size_p1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at DisplayVGA.vhd(69): signal "x_snake_p2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at DisplayVGA.vhd(70): signal "y_snake_p2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at DisplayVGA.vhd(70): signal "size_p2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at DisplayVGA.vhd(79): signal "x_food" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at DisplayVGA.vhd(80): signal "y_food" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at DisplayVGA.vhd(88): signal "x_special_food" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at DisplayVGA.vhd(89): signal "y_special_food" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at DisplayVGA.vhd(89): signal "print_special_food" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at DisplayVGA.vhd(46): inferring latch(es) for signal or variable "red", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at DisplayVGA.vhd(46): inferring latch(es) for signal or variable "green", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at DisplayVGA.vhd(46): inferring latch(es) for signal or variable "blue", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "blue[0]" at DisplayVGA.vhd(46)
+Info (10041): Inferred latch for "blue[1]" at DisplayVGA.vhd(46)
+Info (10041): Inferred latch for "blue[2]" at DisplayVGA.vhd(46)
+Info (10041): Inferred latch for "blue[3]" at DisplayVGA.vhd(46)
+Info (10041): Inferred latch for "green[0]" at DisplayVGA.vhd(46)
+Info (10041): Inferred latch for "green[1]" at DisplayVGA.vhd(46)
+Info (10041): Inferred latch for "green[2]" at DisplayVGA.vhd(46)
+Info (10041): Inferred latch for "green[3]" at DisplayVGA.vhd(46)
+Info (10041): Inferred latch for "red[0]" at DisplayVGA.vhd(46)
+Info (10041): Inferred latch for "red[1]" at DisplayVGA.vhd(46)
+Info (10041): Inferred latch for "red[2]" at DisplayVGA.vhd(46)
+Info (10041): Inferred latch for "red[3]" at DisplayVGA.vhd(46)
+Info (12128): Elaborating entity "sync_mod" for hierarchy "DisplayVGA:vga|sync_mod:vga_sync"
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 105 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 1969 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 6 input pins
+    Info (21059): Implemented 16 output pins
+    Info (21061): Implemented 1947 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 20 warnings
+    Info: Peak virtual memory: 4654 megabytes
+    Info: Processing ended: Tue Jun 26 18:25:34 2018
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:05
+
+

@@ -1,0 +1,113 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'clk'
+Slack : -5.311
+TNS   : -566.996
+
+Type  : Slow 1200mV 85C Model Setup 'player:player1|animator'
+Slack : -2.525
+TNS   : -118.725
+
+Type  : Slow 1200mV 85C Model Setup 'player:player2|animator'
+Slack : -2.297
+TNS   : -49.012
+
+Type  : Slow 1200mV 85C Model Hold 'clk'
+Slack : 0.346
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'player:player2|animator'
+Slack : 0.346
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'player:player1|animator'
+Slack : 0.358
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -186.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'player:player1|animator'
+Slack : -1.000
+TNS   : -152.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'player:player2|animator'
+Slack : -1.000
+TNS   : -47.000
+
+Type  : Slow 1200mV 0C Model Setup 'clk'
+Slack : -4.634
+TNS   : -489.701
+
+Type  : Slow 1200mV 0C Model Setup 'player:player1|animator'
+Slack : -2.211
+TNS   : -92.162
+
+Type  : Slow 1200mV 0C Model Setup 'player:player2|animator'
+Slack : -1.989
+TNS   : -39.316
+
+Type  : Slow 1200mV 0C Model Hold 'clk'
+Slack : 0.301
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'player:player2|animator'
+Slack : 0.307
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'player:player1|animator'
+Slack : 0.312
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -186.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'player:player1|animator'
+Slack : -1.000
+TNS   : -152.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'player:player2|animator'
+Slack : -1.000
+TNS   : -47.000
+
+Type  : Fast 1200mV 0C Model Setup 'clk'
+Slack : -2.592
+TNS   : -236.621
+
+Type  : Fast 1200mV 0C Model Setup 'player:player1|animator'
+Slack : -0.973
+TNS   : -24.057
+
+Type  : Fast 1200mV 0C Model Setup 'player:player2|animator'
+Slack : -0.878
+TNS   : -12.734
+
+Type  : Fast 1200mV 0C Model Hold 'clk'
+Slack : 0.181
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'player:player1|animator'
+Slack : 0.186
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'player:player2|animator'
+Slack : 0.186
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -197.577
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'player:player1|animator'
+Slack : -1.000
+TNS   : -152.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'player:player2|animator'
+Slack : -1.000
+TNS   : -47.000
+
+------------------------------------------------------------
